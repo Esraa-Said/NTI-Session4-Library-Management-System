@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Library Management System</title>
+  </head>
+  <body>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Add Book</h2>
+        <input type="text" placeholder="Book Title" id="BookTitle" />
+        <input type="text" placeholder="Book Author" id="BookAuthor" />
+        <input type="text" placeholder="Book Genre" id="BookGenre" />
+        <input type="date" placeholder="mm / dd / yyyy" id="pubdate" />
+        <input type="number" placeholder="Rating(1-5)" id="Rating" max="5" min="1" />
+        <button id="save">Save</button>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Library Management System</h1>
+      <button id="add">Add Book</button>
+      <div id="filters-input">
+        <input type="search" placeholder="Filter By Author" id="Author" />
+        <input type="search" placeholder="Filter By Genre" id="Genre" />
+        <input type="search" placeholder="Filter By Rating" id="Rating" />
+      </div>
+      <div id="buttons">
+        <button id="ApplyFilters">Apply Filters</button>
+        <button id="SortByTitle">Sort By Title</button>
+        <button id="SortByPublicationDate">Sort By Publication Date</button>
+        <button id="SortByRating">Sort By Rating</button>
+      </div>
+
+      <div id="books"></div>
+    </div>
+    <script src="./dist/myApp.js"></script>
+  </body>
+</html>

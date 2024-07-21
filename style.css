@@ -1,0 +1,146 @@
+body {
+  background-color: rgb(223, 223, 223);
+  margin: 0;
+  padding: 0;
+  font-family:  Arial, sans-serif;
+}
+.container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  position: relative;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.container h1 {
+  margin: 20px;
+}
+.container #add {
+  float: left;
+  width: 100px;
+  border: none;
+  background-color: rgb(12, 109, 255);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  margin: 20px;
+  border-radius: 5px;
+  border-radius: 5px;
+}
+.container #filters-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin: 20px;
+}
+.container #filters-input input {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  padding: 10px;
+}
+
+.container #buttons button {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(12, 109, 255);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: 80px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-content input {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 3px;
+  border: 1px solid #888;
+}
+
+.popup-content button {
+  margin-top: 12px;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(12, 109, 255);
+  color: #fff;
+  float: left;
+  width: 80px;
+  cursor: pointer;
+}
+
+#books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+#books div {
+  flex: 0 0 80%;
+  padding: 10px;
+  background-color: #f2f0f0;
+  margin-bottom: 20px;
+
+}
+
+#books div p span{
+font-weight: bold;
+}
+
+#books div button{
+  margin-top: 12px;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(12, 109, 255);
+  color: #fff;
+  width: 60px;
+  cursor: pointer;
+  margin-right: 20px;
+}
