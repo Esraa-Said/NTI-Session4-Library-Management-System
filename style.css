@@ -43,7 +43,9 @@ body {
   border: 1px solid #888;
   padding: 10px;
 }
-
+.container #buttons {
+  text-align: center;
+}
 .container #buttons button {
   margin: 10px;
   padding: 10px;
@@ -53,7 +55,7 @@ body {
   cursor: pointer;
   border-radius: 5px;
   margin-bottom: 20px;
-  margin-left: 80px;
+
 }
 
 .popup {

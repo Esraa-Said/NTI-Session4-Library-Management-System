@@ -9,6 +9,7 @@ const SortByRating = document.getElementById("SortByRating");
 const author = document.getElementById("Author");
 const genre = document.getElementById("Genre");
 const rating = document.getElementById("Rating");
+console.log(rating);
 // popup
 const popup = document.querySelector(".popup");
 const container = document.querySelector(".container");
@@ -32,7 +33,7 @@ const BookTitle = document.getElementById("BookTitle");
 const BookAuthor = document.getElementById("BookAuthor");
 const BookGenre = document.getElementById("BookGenre");
 const pubdate = document.getElementById("pubdate");
-const RatingWithAdd = document.getElementById("Rating");
+const RatingWithAdd = document.getElementById("RatingWithAdd");
 const save = document.getElementById("save");
 let editIndex = null; // Store the index of the book being edited
 // Books
@@ -70,6 +71,11 @@ save.addEventListener("click", () => {
             Books.push(newBook);
             console.log("Book added:", newBook);
             alert(`Book added: ${newBook.title}`);
+            BookTitle.value = "";
+            BookAuthor.value = "";
+            BookGenre.value = "";
+            pubdate.value = "";
+            RatingWithAdd.value = "";
         }
         popup.style.display = "none";
         displayBooks(Books);
@@ -84,7 +90,8 @@ applyFilter.addEventListener("click", () => {
     let data = [...Books];
     const authorValue = author.value.trim().toLowerCase();
     const genreValue = genre.value.trim().toLowerCase();
-    const ratingValue = rating.value.trim();
+    const ratingValue = Number(rating.value.trim());
+    console.log(ratingValue);
     if (authorValue) {
         data = data.filter((book) => book.author.toLowerCase() === authorValue);
     }

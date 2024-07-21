@@ -1,15 +1,21 @@
 // Buttons
 const addBook = document.getElementById("add") as HTMLButtonElement;
-const applyFilter = document.getElementById("ApplyFilters") as HTMLButtonElement;
+const applyFilter = document.getElementById(
+  "ApplyFilters"
+) as HTMLButtonElement;
 const SortByTitle = document.getElementById("SortByTitle") as HTMLButtonElement;
-const SortByPublicationDate = document.getElementById("SortByPublicationDate") as HTMLButtonElement;
-const SortByRating = document.getElementById("SortByRating") as HTMLButtonElement;
+const SortByPublicationDate = document.getElementById(
+  "SortByPublicationDate"
+) as HTMLButtonElement;
+const SortByRating = document.getElementById(
+  "SortByRating"
+) as HTMLButtonElement;
 
 // Inputs
 const author = document.getElementById("Author") as HTMLInputElement;
 const genre = document.getElementById("Genre") as HTMLInputElement;
 const rating = document.getElementById("Rating") as HTMLInputElement;
-
+console.log(rating)
 // popup
 const popup = document.querySelector(".popup") as HTMLDivElement;
 const container = document.querySelector(".container") as HTMLDivElement;
@@ -38,7 +44,7 @@ const BookTitle = document.getElementById("BookTitle") as HTMLInputElement;
 const BookAuthor = document.getElementById("BookAuthor") as HTMLInputElement;
 const BookGenre = document.getElementById("BookGenre") as HTMLInputElement;
 const pubdate = document.getElementById("pubdate") as HTMLInputElement;
-const RatingWithAdd = document.getElementById("Rating") as HTMLInputElement;
+const RatingWithAdd = document.getElementById("RatingWithAdd") as HTMLInputElement;
 const save = document.getElementById("save") as HTMLButtonElement;
 
 let editIndex: number | null = null; // Store the index of the book being edited
@@ -93,6 +99,11 @@ save.addEventListener("click", () => {
       Books.push(newBook);
       console.log("Book added:", newBook);
       alert(`Book added: ${newBook.title}`);
+      BookTitle.value = "";
+      BookAuthor.value = "";
+      BookGenre.value = "";
+      pubdate.value = "";
+      RatingWithAdd.value = "";
     }
     popup.style.display = "none";
     displayBooks(Books);
@@ -105,10 +116,10 @@ console.log(applyFilter);
 applyFilter.addEventListener("click", () => {
   let data = [...Books];
 
-  const authorValue = author.value.trim().toLowerCase();
-  const genreValue = genre.value.trim().toLowerCase();
-  const ratingValue = rating.value.trim();
-
+  const authorValue: string = author.value.trim().toLowerCase();
+  const genreValue: string= genre.value.trim().toLowerCase();
+  const ratingValue: number = Number(rating.value.trim());
+console.log(ratingValue)
   if (authorValue) {
     data = data.filter((book) => book.author.toLowerCase() === authorValue);
   }
@@ -144,9 +155,9 @@ SortByRating.addEventListener("click", () => {
 });
 
 let displayBooks = (data: Book[]) => {
-  booksSection.innerHTML = ""; 
+  booksSection.innerHTML = "";
   data.forEach((book: Book, index: number) => {
-    const formattedDate = book.date.toDateString(); 
+    const formattedDate = book.date.toDateString();
     booksSection.innerHTML += `<div>
       <h3>${book.title}</h3>
       <p><span>Author: </span>${book.author}</p>
@@ -164,10 +175,10 @@ let displayBooks = (data: Book[]) => {
   BookTitle.value = book.title;
   BookAuthor.value = book.author;
   BookGenre.value = book.genre;
-  pubdate.value = book.date.toISOString().substr(0, 10); 
+  pubdate.value = book.date.toISOString().substr(0, 10);
   RatingWithAdd.value = book.rate.toString();
   popup.style.display = "flex";
-  editIndex = index; 
+  editIndex = index;
 };
 
 (window as any).deleteBook = (index: number) => {
